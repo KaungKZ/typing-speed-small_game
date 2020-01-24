@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container .timer {
+  font-weight: 700;
+  text-align: center;
+  font-size: 32px;
+}
+
+.container .start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+.container .start .start-btn {
+  cursor: pointer;
+  width: 130px;
+  height: 40px;
+  background: #909cff;
+  color: #fff;
+  border-radius: 7px;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  -webkit-transition: background 400ms;
+  transition: background 400ms;
+}
+
+.container .start .start-btn:hover {
+  background: #747ecc;
+}
+
+.container .box {
+  width: 80%;
+  margin: 5rem auto 0 auto;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #5a5a5a;
+  padding: 3rem;
+  -webkit-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.32);
+  box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.32);
+}
+
+.container .box .random-quote {
+  opacity: 0.8;
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+.container .box .random-quote .correct {
+  background: #32d950;
+  color: #000;
+}
+
+.container .box .random-quote .incorrect {
+  background: red;
+  text-decoration: underline;
+}
+
+.container .box .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .box .input textarea {
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+  border: none;
+  color: #353535;
+}
+
+.finish {
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  z-index: 99;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  pointer-events: none;
+}
+
+.finish .content {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  width: 40%;
+  height: 200px;
+  background: #909cff;
+  color: #353535;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  border-radius: 10px;
+}
+
+.finish .content p {
+  font-weight: 700;
+  color: #fff;
+  font-size: 20px;
+}
+
+.finish .content .start-btn {
+  cursor: pointer;
+  width: 130px;
+  height: 40px;
+  background: #fff;
+  color: #5a5a5a;
+  border-radius: 7px;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  -webkit-transition: -webkit-box-shadow 400ms;
+  transition: -webkit-box-shadow 400ms;
+  transition: box-shadow 400ms;
+  transition: box-shadow 400ms, -webkit-box-shadow 400ms;
+}
+
+.finish .content .start-btn:hover {
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.32);
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.32);
+}
+
+.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.active .content {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+@media (max-width: 480px) {
+  .container {
+    overflow: hidden;
+  }
+  .container .box {
+    padding: 3rem 2rem;
+  }
+  .container .box .random-quote {
+    font-size: 1rem;
+  }
+  .finish .content {
+    width: 80%;
+  }
+  .finish .content p {
+    font-size: 1rem;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .finish .content .start-btn {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .finish .content p {
+    font-size: 18px;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+/*# sourceMappingURL=style.css.map */
